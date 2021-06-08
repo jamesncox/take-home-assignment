@@ -11,7 +11,7 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // display user input unless string is empty, then display default message
+    // display user input as textOutput unless string is empty, then display default message as textOutput
     setTextOutput(textInput ? textInput : "Your formatted text will go here!");
   };
 
@@ -34,6 +34,7 @@ function App() {
         <h1>Career Lab | Take-Home Assignment</h1>
       </header>
       <form onSubmit={handleSubmit}>
+        {/* Add aria-label so screen reader better informs user */}
         <label aria-label="text input">
           <textarea
             placeholder="Here is some example text"
@@ -44,6 +45,7 @@ function App() {
         <input type="submit" value="Submit" />
       </form>
       <div id="result">
+        {/* Add  <p> and aria-label so screen reader can better inform user */}
         <p aria-label="text output">{textOutput}</p>
       </div>
       <button onClick={handleUpperCase}>UPPERCASE</button>
