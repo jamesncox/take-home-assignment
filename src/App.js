@@ -21,6 +21,14 @@ function App() {
   // Create two functions, handleUpperCase and handleLowerCase that are
   // wired up to the two buttons for toggling textOutput size
 
+  const handleUpperCase = () => {
+    // update the state of textOutput with .toUpperCase()
+  };
+
+  const handleLowerCase = () => {
+    // update the state of textOutput with .toLowerCase()
+  };
+
   // If I create a button for clearing textInput and textOutput,
   // create a function called clearTextInputAndOutput that resets the state of each.
 
