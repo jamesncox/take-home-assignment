@@ -1,13 +1,11 @@
 import "./App.css";
 // refactor to the descructed import {useState} from "react" because it's more familiar to me
-import React from "react";
+import React, { useState } from "react";
 
 function App() {
   // refactor calling useState without referencing React here
-  const [textInput, setTextInput] = React.useState(
-    "Here is some example text."
-  );
-  const [textOutput, setTextOutput] = React.useState("");
+  const [textInput, setTextInput] = useState("Here is some example text.");
+  const [textOutput, setTextOutput] = useState("");
 
   const handleChange = (event) => {
     setTextInput(event.target.value);
@@ -20,6 +18,16 @@ function App() {
 
   // Create two functions, handleUpperCase and handleLowerCase that are
   // wired up to the two buttons for toggling textOutput size
+
+  const handleUpperCase = () => {
+    // update the state of textOutput with .toUpperCase()
+    setTextOutput(textOutput.toUpperCase());
+  };
+
+  const handleLowerCase = () => {
+    // update the state of textOutput with .toLowerCase()
+    setTextOutput(textOutput.toLowerCase());
+  };
 
   // If I create a button for clearing textInput and textOutput,
   // create a function called clearTextInputAndOutput that resets the state of each.
@@ -40,6 +48,8 @@ function App() {
       {/* Is a <div> here for textOutput without a <p> tag or some other element as accessible and semantic? */}
       <div id="result">{textOutput}</div>
       {/* Create a UI to select/switch between two text size modes: */}
+      <button onClick={handleUpperCase}>UPPERCASE</button>
+      <button onClick={handleLowerCase}>lowercase</button>
       {/* Create two buttons, one that handles upper-casing textOutput and the other that handles lower-casing textOutput */}
       {/* Could be nice to have a button that also that clears textInput and textOutput*/}
     </div>
