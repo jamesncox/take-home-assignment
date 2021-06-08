@@ -1,13 +1,11 @@
 import "./App.css";
 // refactor to the descructed import {useState} from "react" because it's more familiar to me
-import React from "react";
+import React, { useState } from "react";
 
 function App() {
   // refactor calling useState without referencing React here
-  const [textInput, setTextInput] = React.useState(
-    "Here is some example text."
-  );
-  const [textOutput, setTextOutput] = React.useState("");
+  const [textInput, setTextInput] = useState("Here is some example text.");
+  const [textOutput, setTextOutput] = useState("");
 
   const handleChange = (event) => {
     setTextInput(event.target.value);
