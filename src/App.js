@@ -11,7 +11,7 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // display user input as textOutput unless string is empty, then display default message as textOutput
+    // Display user input as textOutput. Or display default message as textOutput if user input is empty: textInput === ""
     setTextOutput(textInput ? textInput : "Your formatted text will go here!");
   };
 
