@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 function App() {
   // refactor calling useState without referencing React here
-  const [textInput, setTextInput] = useState("Here is some example text.");
+  const [textInput, setTextInput] = useState("");
   const [textOutput, setTextOutput] = useState("");
 
   const handleChange = (event) => {
@@ -13,12 +13,12 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setTextOutput("Your formatted text will go here!");
+    // display user input unless string is empty, then display default message
+    setTextOutput(textInput ? textInput : "Your formatted text will go here!");
   };
 
   // Create two functions, handleUpperCase and handleLowerCase that are
   // wired up to the two buttons for toggling textOutput size
-
   const handleUpperCase = () => {
     // update the state of textOutput with .toUpperCase()
     setTextOutput(textOutput.toUpperCase());
@@ -41,17 +41,21 @@ function App() {
       {/* The form is currently labelled implicitly and I think explicitly is better. */}
       <form onSubmit={handleSubmit}>
         <label>
-          <textarea onChange={handleChange} value={textInput} />
+          <textarea
+            placeholder="Here is some example text"
+            onChange={handleChange}
+            value={textInput}
+          />
         </label>
         <input type="submit" value="Submit" />
       </form>
       {/* Is a <div> here for textOutput without a <p> tag or some other element as accessible and semantic? */}
       <div id="result">{textOutput}</div>
       {/* Create a UI to select/switch between two text size modes: */}
-      <button onClick={handleUpperCase}>UPPERCASE</button>
-      <button onClick={handleLowerCase}>lowercase</button>
       {/* Create two buttons, one that handles upper-casing textOutput and the other that handles lower-casing textOutput */}
       {/* Could be nice to have a button that also that clears textInput and textOutput*/}
+      <button onClick={handleUpperCase}>UPPERCASE</button>
+      <button onClick={handleLowerCase}>lowercase</button>
     </div>
   );
 }
