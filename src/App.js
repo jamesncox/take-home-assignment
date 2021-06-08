@@ -40,7 +40,7 @@ function App() {
       {/* Does this form need some more accessibility considerations? */}
       {/* The form is currently labelled implicitly and I think explicitly is better. */}
       <form onSubmit={handleSubmit}>
-        <label>
+        <label aria-label="text input">
           <textarea
             placeholder="Here is some example text"
             onChange={handleChange}
@@ -50,7 +50,9 @@ function App() {
         <input type="submit" value="Submit" />
       </form>
       {/* Is a <div> here for textOutput without a <p> tag or some other element as accessible and semantic? */}
-      <div id="result">{textOutput}</div>
+      <div id="result">
+        <p aria-label="text output">{textOutput}</p>
+      </div>
       {/* Create a UI to select/switch between two text size modes: */}
       {/* Create two buttons, one that handles upper-casing textOutput and the other that handles lower-casing textOutput */}
       {/* Could be nice to have a button that also that clears textInput and textOutput*/}
