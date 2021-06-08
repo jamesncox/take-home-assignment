@@ -50,8 +50,8 @@ function App() {
       {/* Is a <div> here for textOutput without a <p> tag or some other element as accessible and semantic? */}
       <div id="result">{textOutput}</div>
       {/* Create a UI to select/switch between two text size modes: */}
-      <button>UPPERCASE</button>
-      <button>lowercase</button>
+      <button onClick={handleUpperCase}>UPPERCASE</button>
+      <button onClick={handleLowerCase}>lowercase</button>
       {/* Create two buttons, one that handles upper-casing textOutput and the other that handles lower-casing textOutput */}
       {/* Could be nice to have a button that also that clears textInput and textOutput*/}
     </div>
