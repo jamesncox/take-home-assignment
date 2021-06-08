@@ -31,6 +31,10 @@ function App() {
 
   // If I create a button for clearing textInput and textOutput,
   // create a function called clearTextInputAndOutput that resets the state of each.
+  const clearInputAndOutputText = () => {
+    setTextInput("");
+    setTextOutput("");
+  };
 
   return (
     <div className="App">
@@ -58,6 +62,7 @@ function App() {
       {/* Could be nice to have a button that also that clears textInput and textOutput*/}
       <button onClick={handleUpperCase}>UPPERCASE</button>
       <button onClick={handleLowerCase}>lowercase</button>
+      <button onClick={clearInputAndOutputText}>Clear Text</button>
     </div>
   );
 }
