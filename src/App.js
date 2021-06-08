@@ -23,10 +23,12 @@ function App() {
 
   const handleUpperCase = () => {
     // update the state of textOutput with .toUpperCase()
+    setTextOutput(textOutput.toUpperCase());
   };
 
   const handleLowerCase = () => {
     // update the state of textOutput with .toLowerCase()
+    setTextOutput(textOutput.toLowerCase());
   };
 
   // If I create a button for clearing textInput and textOutput,
